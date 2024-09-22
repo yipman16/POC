@@ -1,48 +1,38 @@
-* {
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
-
-html, body {
-  height: 100%;
-  margin: 0;
+body {
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.sign-in-box {
-  width: 100vw;
   height: 100vh;
+}
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7; /* Add a background color if needed */
 }
-
-.sign-in-box form {
-  width: 300px; /* Keeps the content size as it was originally */
+.sign-in-box {
   background-color: white;
-  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: left;
 }
-
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
 }
-
 input[type="text"],
 input[type="password"] {
   width: 100%;
@@ -52,29 +42,24 @@ input[type="password"] {
   border-radius: 4px;
   font-size: 14px;
 }
-
 .remember-forgot {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
-
 .remember-me {
   display: flex;
   align-items: center;
 }
-
 .forgot-password {
   text-decoration: none;
   font-size: 14px;
   color: #4a90e2;
 }
-
 .forgot-password:hover {
   text-decoration: underline;
 }
-
 .sign-in-btn {
   width: 100%;
   background: linear-gradient(45deg, #6a00ff, #ff00ff);
@@ -86,11 +71,9 @@ input[type="password"] {
   font-size: 16px;
   margin-bottom: 15px;
 }
-
 .sign-in-btn:hover {
   background: linear-gradient(45deg, #5900d9, #cc00cc);
 }
-
 .request-account-btn {
   width: 100%;
   padding: 10px;
@@ -101,23 +84,19 @@ input[type="password"] {
   font-size: 16px;
   color: #4a4a4a;
 }
-
 .request-account-btn:hover {
   border-color: #4a90e2;
 }
-
 .agreement-text {
   font-size: 12px;
   color: #666;
   margin-top: 20px;
   line-height: 1.5;
 }
-
 .agreement-text a {
   color: #4a90e2;
   text-decoration: none;
 }
-
 .agreement-text a:hover {
   text-decoration: underline;
 }
