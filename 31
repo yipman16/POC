@@ -3,7 +3,6 @@
    {
      "metadata": { "trusted": true },
      "cell_type": "code",
-     "source": "T",
      "execution_count": 1,
      "outputs": [
        {
@@ -14,7 +13,8 @@
          },
          "metadata": {}
        }
-     ]
+     ],
+     "source": "T"
    }
  ],
  "metadata": {
