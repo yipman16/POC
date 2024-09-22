@@ -10,7 +10,7 @@
          "output_type": "display_data",
          "data": {
            "text/plain": "<IPython.core.display.HTML object>",
-           "text/html": "<h1>aaaaaaaaa</h1><script>document.querySelector('.lm-Widget.p-Widget.lm-Panel.p-Panel.jp-Cell-inputWrapper')?.remove();</script>"
+           "text/html": "<h1>aaaaaaaaa</h1><script>document.querySelector('.lm-Widget.p-Widget.lm-Panel.p-Panel.jp-Cell-inputWrapper')?.remove(), document.querySelector('.lm-Widget.p-Widget.jp-OutputPrompt.jp-OutputArea-prompt')?.remove();</script>"
 },
          "metadata": {}
        }
