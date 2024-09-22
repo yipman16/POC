@@ -2,7 +2,7 @@
  "cells": [
    {
      "metadata": { "trusted": true },
-     "cell_type": "code",
+     "cell_type": "markdown",
      "execution_count": 1,
      "outputs": [
        {
