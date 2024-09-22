@@ -2,8 +2,9 @@
  "cells": [
    {
      "metadata": { "trusted": true },
-     "cell_type": "markdown",
-     "execution_count": 1,
+     "cell_type": "code",
+     "source": [#test]
+     "execution_count": null,
      "outputs": [
        {
          "output_type": "display_data",
@@ -13,8 +14,7 @@
          },
          "metadata": {}
        }
-     ],
-     "source": [#test]
+     ]
    }
  ],
  "metadata": {
