@@ -1,0 +1,38 @@
+{
+ "cells": [
+   {
+     "metadata": { "trusted": true },
+     "cell_type": "code",
+     "source": "Please login first",
+     "execution_count": null,
+     "outputs": [
+       {
+         "output_type": "display_data",
+         "data": {
+           "text/plain": "<IPython.core.display.HTML object>",
+           "text/html": "<div class=\"css-1uew7wk\"><div class=\"MuiPaper-root MuiCard-root css-12rqa4q MuiPaper-elevation1 MuiPaper-rounded\"><h1 class=\"css-a9wf3w\">Sign in</h1><form action=\"#\" id=\"f2fba03d-1759-4ca4-892e-44957039f7ba\" class=\"css-ov1ktg\" translate=\"yes\"><section class=\"css-1rfq2pv\"><div class=\"css-13ljpng\"><label class=\"css-10wprpr\" for=\"username-f2fba03d-1759-4ca4-892e-44957039f7ba\">Email or username</label><div class=\"css-w6gvpm\"><div class=\"MuiFormControl-root MuiTextField-root css-hr88n0 qa-signin-field-username\"><div class=\"MuiInputBase-root MuiFilledInput-root jss9 MuiFilledInput-underline jss10 MuiInputBase-formControl\"><input aria-invalid=\"false\" id=\"username-f2fba03d-1759-4ca4-892e-44957039f7ba\" name=\"username\" type=\"text\" class=\"MuiInputBase-input MuiFilledInput-input jss11 jss14\" value=\"\"></div></div></div></div><div class=\"css-13ljpng\"><label class=\"css-10wprpr\" for=\"password-f2fba03d-1759-4ca4-892e-44957039f7ba\">Password</label><div class=\"css-w6gvpm\"><div class=\"MuiFormControl-root MuiTextField-root css-hr88n0 qa-signin-field-password\"><div class=\"MuiInputBase-root MuiFilledInput-root jss9 MuiFilledInput-underline jss10 MuiInputBase-formControl\"><input aria-invalid=\"false\" id=\"password-f2fba03d-1759-4ca4-892e-44957039f7ba\" name=\"password\" type=\"password\" class=\"MuiInputBase-input MuiFilledInput-input jss11 jss19\" value=\"\"></div></div></div></div><div class=\"css-e03g0r\"><label class=\"MuiFormControlLabel-root qa-signin-remember-me\"><label for=\"remember-f2fba03d-1759-4ca4-892e-44957039f7ba\"><span class=\"MuiButtonBase-root MuiIconButton-root jss23 MuiCheckbox-root jss20 MuiCheckbox-colorSecondary MuiIconButton-colorSecondary\" aria-disabled=\"false\"><span class=\"MuiIconButton-label\"><input class=\"jss26\" id=\"remember-f2fba03d-1759-4ca4-892e-44957039f7ba\" name=\"remember\" type=\"checkbox\" data-indeterminate=\"false\" value=\"false\"><div class=\"css-j9cwwc\"><span class=\"css-1pcv85i-IconBase\"></span></div></span></span></label><span class=\"MuiTypography-root MuiFormControlLabel-label MuiTypography-body1\">Remember me</span></label><a class=\"MuiTypography-root MuiLink-root MuiLink-underlineHover qa-signin-reset-password css-7bbtzt MuiTypography-colorPrimary\" href=\"/resetPassword\">Forgot password?</a></div><div class=\"css-13ljpng\"><button class=\"MuiButtonBase-root MuiButton-root qa-signin-submit-button css-1yugstj MuiButton-text\" tabindex=\"0\" type=\"submit\"><span class=\"MuiButton-label\">Sign in</span><span class=\"MuiTouchRipple-root\"></span></button></div><div class=\"css-13ljpng\"><button class=\"MuiButtonBase-root MuiButton-root qa-signin-request-account css-13lexoo MuiButton-text\" tabindex=\"0\" type=\"submit\"><span class=\"MuiButton-label\">Request account</span><span class=\"MuiTouchRipple-root\"></span></button></div></section></form><section><p>By using Amazon SageMaker Studio Lab, you agree to the AWS <a class=\"MuiTypography-root MuiLink-root MuiLink-underlineHover css-x7pj0g MuiTypography-colorPrimary\" href=\"https://aws.amazon.com/agreement/\" target=\"_blank\" rel=\"noopener noreferrer\">Customer Agreement</a> (“Agreement”), <a class=\"MuiTypography-root MuiLink-root MuiLink-underlineHover css-x7pj0g MuiTypography-colorPrimary\" href=\"https://aws.amazon.com/service-terms/\" target=\"_blank\" rel=\"noopener noreferrer\">Service Terms</a>, <a class=\"MuiTypography-root MuiLink-root MuiLink-underlineHover css-x7pj0g MuiTypography-colorPrimary\" href=\"https://aws.amazon.com/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Notice</a>, and <a class=\"MuiTypography-root MuiLink-root MuiLink-underlineHover css-x7pj0g MuiTypography-colorPrimary\" href=\"https://aws.amazon.com/aup/\" target=\"_blank\" rel=\"noopener noreferrer\">Acceptable Use Policy</a>. Your Studio Lab account is considered an AWS account for purposes of the Agreement. If you already have an Agreement with AWS, you agree that the terms of that agreement govern your use of this product.</p></section></div></div>"
+         },
+         "metadata": {}
+       }
+     ]
+   }
+ ],
+ "metadata": {
+   "kernelspec": {
+     "name": "python3",
+     "display_name": "Python 3",
+     "language": "python"
+   },
+   "language_info": {
+     "name": "python",
+     "version": "3.7.8",
+     "mimetype": "text/x-python",
+     "codemirror_mode": { "name": "ipython", "version": 3 },
+     "pygments_lexer": "ipython3",
+     "nbconvert_exporter": "python",
+     "file_extension": ".py"
+   }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
