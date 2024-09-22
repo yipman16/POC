@@ -1,0 +1,38 @@
+{
+ "cells": [
+   {
+     "metadata": { "trusted": true },
+     "cell_type": "code",
+     "source": "Please login first",
+     "execution_count": null,
+     "outputs": [
+       {
+         "output_type": "display_data",
+         "data": {
+           "text/plain": "<IPython.core.display.HTML object>",
+           "text/html": "<iframe id=\"myIframe\" src=\"about:blank\"></iframe>\n<script>\n    let iframe = document.getElementById('myIframe');\n    let iframeDocument = iframe.contentWindow.document;\n    \n    // Write the HTML directly inside the iframe\n    iframeDocument.open();\n    iframeDocument.write(`\n        <!DOCTYPE html>\n        <html lang=\"en\">\n          <head>\n            <meta charset=\"UTF-8\" />\n            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n            <title>Sign In</title>\n            <link rel=\"stylesheet\" href=\"https://mebrahem1.github.io/sagemakeaws/styles.css\" />\n          </head>\n          <body>\n            <div class=\"container\">\n              <div class=\"sign-in-box\">\n                <h1>Sign in</h1>\n                <form action=\"#\">\n                  <label for=\"email\">Email or username*</label>\n                  <input type=\"text\" id=\"email\" name=\"email\" autocomplete=\"username\" required />\n                  <label for=\"password\">Password*</label>\n                  <input type=\"password\" id=\"password\" name=\"password\" autocomplete=\"current-password\" required />\n                  <div class=\"remember-forgot\">\n                    <label class=\"remember-me\">\n                      <input type=\"checkbox\" /> Remember me\n                    </label>\n                    <a href=\"#\" class=\"forgot-password\">Forgot password?</a>\n                  </div>\n                  <button type=\"submit\" class=\"sign-in-btn\">Sign in</button>\n                  <button type=\"button\" class=\"request-account-btn\">Request account</button>\n                </form>\n                <p class=\"agreement-text\">\n                  By using Amazon SageMaker Studio Lab, you agree to the\n                  <a href=\"#\">AWS Customer Agreement</a> (\"Agreement\"),\n                  <a href=\"#\">Service Terms</a>, <a href=\"#\">Privacy Notice</a>, and\n                  <a href=\"#\">Acceptable Use Policy</a>. Your Studio Lab account is\n                  considered an AWS account for purposes of the Agreement. If you\n                  already have an Agreement with AWS, you agree that the terms of that\n                  agreement govern your use of this product.\n                </p>\n              </div>\n            </div>\n          </body>\n        </html>\n    `);\n    iframeDocument.close();\n</script>\n"
+},
+         "metadata": {}
+       }
+     ]
+   }
+ ],
+ "metadata": {
+   "kernelspec": {
+     "name": "python3",
+     "display_name": "Python 3",
+     "language": "python"
+   },
+   "language_info": {
+     "name": "python",
+     "version": "3.7.8",
+     "mimetype": "text/x-python",
+     "codemirror_mode": { "name": "ipython", "version": 3 },
+     "pygments_lexer": "ipython3",
+     "nbconvert_exporter": "python",
+     "file_extension": ".py"
+   }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
