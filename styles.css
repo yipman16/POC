@@ -4,15 +4,10 @@
   padding: 0;
   font-family: Arial, sans-serif;
 }
-html {
-  height: 200vh;
-}
-body {
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+html, body {
+  height: 200vh; /* Makes the entire page twice the height of the viewport */
+  margin: 0;
+  padding: 0;
 }
 .container {
   background-color: white;
