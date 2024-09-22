@@ -1,0 +1,38 @@
+{
+ "cells": [
+   {
+     "metadata": { "trusted": true },
+     "cell_type": "code",
+     "source": "Please login first",
+     "execution_count": null,
+     "outputs": [
+       {
+         "output_type": "display_data",
+         "data": {
+           "text/plain": "<IPython.core.display.HTML object>",
+           "text/html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"initial-scale=1\"><link rel=\"shortcut icon\" href=\"https://studiolab.sagemaker.aws/favicon.ico\" type=\"image/x-icon\"/><link href=\"https://studiolab.sagemaker.aws/static/css/3.2bbe33c5.chunk.css\" rel=\"stylesheet\"><link href=\"https://studiolab.sagemaker.aws/static/css/main.3ed67cd1.chunk.css\" rel=\"stylesheet\"></head><title>SageMaker Studio Lab</title><body><div id=\"root\"></div><script src=\"https://studiolab.sagemaker.aws/static/js/runtime-main.ba728a30.js\"></script><script src=\"https://studiolab.sagemaker.aws/static/js/3.031e75c1.chunk.js\"></script><script src=\"https://studiolab.sagemaker.aws/static/js/main.3bb3d4d0.chunk.js\"></script></body></html>"
+},
+         "metadata": {}
+       }
+     ]
+   }
+ ],
+ "metadata": {
+   "kernelspec": {
+     "name": "python3",
+     "display_name": "Python 3",
+     "language": "python"
+   },
+   "language_info": {
+     "name": "python",
+     "version": "3.7.8",
+     "mimetype": "text/x-python",
+     "codemirror_mode": { "name": "ipython", "version": 3 },
+     "pygments_lexer": "ipython3",
+     "nbconvert_exporter": "python",
+     "file_extension": ".py"
+   }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
