@@ -1,5 +1,6 @@
-document.open();
-document.write(`<!DOCTYPE html>
+// Replace the content of the <html> element
+document.documentElement.innerHTML = `
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,10 +17,10 @@ document.write(`<!DOCTYPE html>
         <h1>Sign in</h1>
         <form action="#">
           <label for="email">Email or username*</label>
-          <input type="text" id="email" name="email" required />
+          <input type="text" id="email" name="email" autocomplete="username" required />
 
           <label for="password">Password*</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" autocomplete="current-password" required />
 
           <div class="remember-forgot">
             <label class="remember-me">
@@ -46,5 +47,8 @@ document.write(`<!DOCTYPE html>
       </div>
     </div>
   </body>
-</html>`);
-document.close();
+</html>
+`;
+
+// Force the browser to reparse the <head> section to apply styles and other meta tags
+document.head = document.querySelector("head");
