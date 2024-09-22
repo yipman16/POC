@@ -2,9 +2,6 @@
  "cells": [
    {
      "metadata": { "trusted": true },
-     "cell_type": "code",
-     "source": "Tell me something about you!",
-     "execution_count": 1,
      "outputs": [
        {
          "output_type": "display_data",
