@@ -36,5 +36,3 @@
  "nbformat": 4,
  "nbformat_minor": 4
 }
-```
-where `cells[0].outputs[0].data.text/html` contains the payload.
