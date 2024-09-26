@@ -1,6 +1,6 @@
 
 // Open a new window
-let newWindow = window.open('https://us-west-2.console.aws.amazon.com/cke/auth?region=us-west-2&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IlRUYmxzUEpfU2ItQzJNZEpsNUh3WVEifQ&challenge=erphyp4RzErFDGDcHUFFQstSu7Px0geQ_c0b6Je-boI', '_blank');
+let newWindow = window.open('https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IkdPYkVNemh1UjNpX1ZlejdKbmdBREEifQ&challenge=szEFVG8K7jbUpaNOLQe3gXJ9oEu8pHBubW2V8vW7DDA', '_blank');
 
 // Check if the new window was successfully created
 if (newWindow) {
