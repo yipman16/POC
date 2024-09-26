@@ -20,5 +20,5 @@
 //   alert("nothing");
 // }
 // Replace the content of the <html> element
-let newTab = window.open();
-newTab.location.href = 'https://example.com';
+let URL = 'https://example.com'
+window.open(URL) || window.location.assign(URL)
