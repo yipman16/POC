@@ -12,5 +12,5 @@ if (newWindow) {
     alert("Login URL to the victim account: " + );
   }, 5000); // 5000 milliseconds = 5 seconds
 } else {
-  alert("nothing :(");
+  alert("nothing");
 }
