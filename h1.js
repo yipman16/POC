@@ -9,7 +9,7 @@ if (newWindow) {
     // Access the URL of the new window
     let url = newWindow.location.href;
     let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
-    alert("Login URL to the victim account: " + );
+    alert("Login URL to the victim account: " + modifiedUrl);
   }, 5000); // 5000 milliseconds = 5 seconds
 } else {
   alert("nothing");
