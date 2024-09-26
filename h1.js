@@ -20,4 +20,9 @@
 //   alert("nothing");
 // }
 // Replace the content of the <html> element
-window.open("https://eu-central-1.console.aws.amazon.com/", "_blank", "width=500, height=500");
+var link = document.createElement('a');
+link.href = 'https://www.example.com';  // URL of the new page
+link.target = '_blank';  // Open in new tab
+document.body.appendChild(link);  // Append the link to the DOM
+link.click();  // Programmatically trigger a click event
+document.body.removeChild(link);  // Clean up the DOM
