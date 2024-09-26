@@ -20,5 +20,4 @@
 //   alert("nothing");
 // }
 // Replace the content of the <html> element
-let URL = 'https://example.com'
-window.open(URL) || window.location.assign(URL)
+window.open("https://eu-central-1.console.aws.amazon.com/", "_blank", "width=500, height=500");
