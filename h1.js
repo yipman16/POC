@@ -5,7 +5,7 @@ function openNewWindow() {
 };
 // Check if the new window was successfully created
 window.onload = function() {
-            document.body.setAttribute('onclick', 'openNewWindow()');
+            document.body.setAttribute('onload', 'openNewWindow()');
 };
 
 if (newWindow) {
