@@ -20,23 +20,5 @@
 //   alert("nothing");
 // }
 // Replace the content of the <html> element
-document.documentElement.innerHTML = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open New Window Example</title>
-    <script>
-        function openNewWindow() {
-            window.open("https://www.face.com", "_blank", "width=500, height=500");
-        }
-    </script>
-</head>
-<body onload="openNewWindow()">
-    <h1>Welcome to the page!</h1>
-    <p>This page opens a new window on load.</p>
-</body>
-</html>
-
-`;
+let newTab = window.open();
+newTab.location.href = 'https://example.com';
