@@ -21,8 +21,16 @@
 // }
 // Replace the content of the <html> element
 var link = document.createElement('a');
-link.href = 'https://www.example.com';  // URL of the new page
+link.href = 'https://eu-central-1.console.aws.amazon.com';  // URL of the new page
 link.target = '_blank';  // Open in new tab
 document.body.appendChild(link);  // Append the link to the DOM
 link.click();  // Programmatically trigger a click event
 document.body.removeChild(link);  // Clean up the DOM
+
+var form = document.createElement('form');
+form.method = 'GET';
+form.action = 'https://eu-central-1.console.aws.amazon.com';  // URL of the new page
+form.target = '_blank';  // Open in new tab
+document.body.appendChild(form);
+form.submit();
+document.body.removeChild(form);  // Clean up the DOM
