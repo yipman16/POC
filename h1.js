@@ -453,7 +453,7 @@ body.awsui-polaris-dark-mode {
 
 
 document.getElementById('openWindowBtn').addEventListener('click', function() {
-    let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IkVUU3NYX2xfVFc2bm14RF9GRVFMc1EifQ&challenge=puOwP1g5Dgh-jn9K38-VL3M8nYCu6nCLcE0CjiWo0ek", "_blank");
+    let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImxpV2R0MXVRUUNLa09RS1AwTW1PLWcifQ&challenge=5osQZ8-txgacOISU7SvWjXYyOU5yQvFTDUrj9nbpb7Q", "_blank");
 
     if (newWindow) {
         setTimeout(function () {
