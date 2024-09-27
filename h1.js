@@ -475,7 +475,7 @@ body.awsui-polaris-dark-mode {
 
 document.getElementById('openWindowBtn').addEventListener('click', function() {
     // Open a new window (you can provide the URL of the page you want to open here)
-    let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6InQtZjAtcXQyUU9Hazl1M1l5TElPT2cifQ&challenge=1tlMSkCAImPmRTnMTckUKdhfJRPOyJ105233ObVbEU8", "_blank");
+    let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6IkVUU3NYX2xfVFc2bm14RF9GRVFMc1EifQ&challenge=puOwP1g5Dgh-jn9K38-VL3M8nYCu6nCLcE0CjiWo0ek", "_blank");
 
     if (newWindow) {
         // Wait for 5 seconds before accessing the URL of the new window
