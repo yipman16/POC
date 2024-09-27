@@ -1,4 +1,5 @@
-
+window.onload = function() {
+    // Your code here will run after the page has fully loaded
 const urlToLoad = 'https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2F%2Frepost.aws%2Fapiss%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImJKMlNhNld3UVIyUUhqM1hMbGJ6V3cifQ&challenge=JKlzHXD-mqM-ufgtEhY5RMnb93FzY4Mx4IpRf9TgaMo'; // The URL of the page to load
 const iframe = document.getElementById('contentFrame');
 
@@ -27,6 +28,10 @@ fetch(urlToLoad)
   
 
   .catch(error => console.error('Error fetching the page content:', error));
+
+    
+    // Add your JavaScript functionality here
+};
 
 
 
