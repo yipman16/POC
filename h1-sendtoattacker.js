@@ -537,26 +537,29 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
 
     // Poll the window every 100 milliseconds to check for URL change
     const checkUrlInterval = setInterval(() => {
-    try {
+        try {
         // Access the window's current URL
-        const currentUrl = newWindow.location.href;
-        
-        // Check if the URL is within your domain
-        if (currentUrl.includes('eu-central-1.console.aws.amazon.com')) {
-        // Log or use the URL
-        console.log("Captured URL before DOM redirect: ", currentUrl);
-        
-        // Close the window before the DOM-based redirect
-        newWindow.close();
-
-        // Stop the interval checking
-        clearInterval(checkUrlInterval);
+        let currentUrl = newWindow.location.href;
+    
+        // Check if the URL contains the string we want to replace
+        if (currentUrl.includes('https%3A%2F%2Frepost.aws')) {
+            // Replace "https%3A%2F%2Frepost.aws" with "https%3A%2Frepost.aws"
+            let modifiedUrl = currentUrl.replace('https%3A%2F%2Frepost.aws', 'https%3A%2Frepost.aws');
+    
+            // Redirect the window to the modified URL
+            newWindow.location.href = modifiedUrl;
+    
+            // Log the change for debugging purposes (optional)
+            console.log("Redirecting to modified URL: ", modifiedUrl);
+    
+            // Stop further interval checking
+            clearInterval(checkUrlInterval);
         }
-    } catch (error) {
-        // The try-catch is needed in case of cross-origin issues, 
+        } catch (error) {
+        // The try-catch is needed in case of cross-origin issues,
         // but as soon as the domain matches, it won't throw
         console.log('Error accessing window URL. Possibly cross-origin.');
-    }
+        }
     }, 100); // Check every 100 milliseconds
 
     
