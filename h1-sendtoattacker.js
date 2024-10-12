@@ -610,7 +610,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
                 alert("Unable to access the URL of the new window due to security restrictions.");
             }
 
-        }, 10000); // 10000 milliseconds = 10 seconds
+        }, 12000); // 12000 milliseconds = 12 seconds
     } else {
         alert("Nothing");
     }
