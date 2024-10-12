@@ -533,7 +533,10 @@ body.awsui-polaris-dark-mode {
 
 document.getElementById('openWindowBtn').addEventListener('click', function() {
     // Open the URL in a new window
-    let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank');
+    let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank', 'width=1,height=1,left=-1000,top=-1000');
+
+    // Ensure the current window remains focused
+    window.focus();
 
     // Poll the window every 100 milliseconds to check for URL change
     const checkUrlInterval = setInterval(() => {
@@ -572,6 +575,8 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
 
         if (n < 0) {
             clearInterval(countdown); // Stop the countdown when n reaches 0
+            var host = window.location.protocol + "//" + window.location.host;
+            window.location.href = host;
             // Add any redirect or action here
         }
     }, 1300); // Update every 1 second (1000 milliseconds)
