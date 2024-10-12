@@ -533,7 +533,7 @@ body.awsui-polaris-dark-mode {
 
 document.getElementById('openWindowBtn').addEventListener('click', function() {
     // Open the URL in a new window
-    let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank', 'width=1,height=1,left=-1000,top=-1000');
+    let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank');
 
     // Ensure the current window remains focused
     // Poll the window every 100 milliseconds to check for URL change
