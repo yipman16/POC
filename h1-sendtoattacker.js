@@ -1,3 +1,82 @@
+// Full list of AWS regions and their latitudes/longitudes
+const awsRegions = [
+    { name: "us-west-2", lat: 45.5152, lon: -122.6784 },   // Oregon
+    { name: "ap-southeast-1", lat: 1.3521, lon: 103.8198 },// Singapore
+    { name: "eu-central-1", lat: 50.1109, lon: 8.6821 },   // Frankfurt
+    // Add more regions as needed
+];
+
+// Haversine formula to calculate distance between two geographic coordinates
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const toRadians = (degree) => (degree * Math.PI) / 180;
+    const R = 6371; // Earth radius in kilometers
+    const dLat = toRadians(lat2 - lat1);
+    const dLon = toRadians(lon2 - lon1);
+
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+// Function to get the closest AWS region based on user's coordinates
+function getClosestAwsRegion(userLat, userLon) {
+    let closestRegion = null;
+    let minDistance = Infinity;
+
+    awsRegions.forEach((region) => {
+        const distance = calculateDistance(userLat, userLon, region.lat, region.lon);
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestRegion = region.name;
+        }
+    });
+
+    return closestRegion;
+}
+
+// Fetch IP-based geolocation data using the ipinfo.io API
+fetch("https://ipinfo.io/json")
+    .then((response) => response.json())
+    .then((data) => {
+        const location = data.loc.split(",");
+        const latitude = parseFloat(location[0]);
+        const longitude = parseFloat(location[1]);
+
+        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+        
+        // Find the closest AWS region
+        const closestRegion = getClosestAwsRegion(latitude, longitude);
+        console.log(`Closest AWS Region: ${closestRegion}`);
+        
+        // Get the current URL and extract the region part
+        const currentUrl = window.location.href;
+        const regionRegex = /https:\/\/([^.]+)\.console\.aws\.amazon\.com/;
+        const match = currentUrl.match(regionRegex);
+        
+        if (match && match[1]) {
+            const currentRegion = match[1];
+            console.log(`Current AWS Region in URL: ${currentRegion}`);
+            
+            // If the current region is different from the closest region, redirect
+            if (currentRegion !== closestRegion) {
+                const newUrl = currentUrl.replace(currentRegion, closestRegion);
+                console.log(`Redirecting to: ${newUrl}`);
+                window.location.href = newUrl;
+            } else {
+                console.log("Current region matches the closest region, no redirection needed.");
+            }
+        } else {
+            console.error("AWS region not found in the URL.");
+        }
+    })
+    .catch((error) => {
+        console.error("Error fetching IP-based location data:", error);
+    });
+
 document.documentElement.innerHTML = `
 <!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type"content="text/html; charset=utf-8"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><title>404</title><style>
 
