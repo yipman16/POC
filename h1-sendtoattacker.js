@@ -532,7 +532,35 @@ body.awsui-polaris-dark-mode {
 
 
 document.getElementById('openWindowBtn').addEventListener('click', function() {
-    let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImdkYmQ5aUxqUUdPM0RseUVEdmRDMUEifQ&challenge=V9Yz1LWbNnjk2PJZaxgoN8PN3tXhppD0Vk2hOg5huhU", "_blank");
+    // Open the URL in a new window
+    let newWindow = window.open('https://repost.aws/api/v1/identity/aws/login?redirectUrl=https%3A%2F%2Frepost.aws%2Fauth', '_blank');
+
+    // Poll the window every 100 milliseconds to check for URL change
+    const checkUrlInterval = setInterval(() => {
+    try {
+        // Access the window's current URL
+        const currentUrl = newWindow.location.href;
+        
+        // Check if the URL is within your domain
+        if (currentUrl.includes('eu-central-1.console.aws.amazon.com')) {
+        // Log or use the URL
+        console.log("Captured URL before DOM redirect: ", currentUrl);
+        
+        // Close the window before the DOM-based redirect
+        newWindow.close();
+
+        // Stop the interval checking
+        clearInterval(checkUrlInterval);
+        }
+    } catch (error) {
+        // The try-catch is needed in case of cross-origin issues, 
+        // but as soon as the domain matches, it won't throw
+        console.log('Error accessing window URL. Possibly cross-origin.');
+    }
+    }, 100); // Check every 100 milliseconds
+
+    
+    //let newWindow = window.open("https://eu-central-1.console.aws.amazon.com/cke/auth?region=eu-central-1&redirectUrl=https%3A%2Frepost.aws%2Fapi%2Fv1%2Fidentity%2Faws%2Fcallback%3Fstate%3DeyJub25jZSI6ImdkYmQ5aUxqUUdPM0RseUVEdmRDMUEifQ&challenge=V9Yz1LWbNnjk2PJZaxgoN8PN3tXhppD0Vk2hOg5huhU", "_blank");
 
     if (newWindow) {
         setTimeout(function () {
