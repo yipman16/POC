@@ -500,7 +500,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
                 alert("Unable to access the URL of the new window due to security restrictions.");
             }
 
-        }, 7000); // 7000 milliseconds = 7 seconds
+        }, 10000); // 10000 milliseconds = 10 seconds
     } else {
         alert("Nothing");
     }
