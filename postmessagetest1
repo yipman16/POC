@@ -10,7 +10,7 @@
             "output_type": "display_data",
             "data": {
               "text/plain": "<IPython.core.display.HTML object>",
-              "text/html": "<script>window.parent.postMessage({ type: 'ContentHeight', contentHeight: 100 }, '*');</script>"
+              "text/html": "<script>window.parent.postMessage({ type: 'ContentHeight', contentHeight: 1010 }, '*');</script>"
    },
             "metadata": {}
           }
