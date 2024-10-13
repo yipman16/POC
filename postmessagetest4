@@ -10,7 +10,7 @@
             "output_type": "display_data",
             "data": {
               "text/plain": "<IPython.core.display.HTML object>",
-              "text/html": "<script>var parentOrigin = document.referrer ? new URL(document.referrer).origin : window.location.origin; console.log(parentOrigin);</script>"
+              "text/html": "<script>window.addEventListener('load', function(){ window.parent.postMessage({ type: 'ContentHeight', contentHeight: 200 }, '*'); });</script>"
    },
             "metadata": {}
           }
