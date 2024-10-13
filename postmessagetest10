@@ -10,7 +10,7 @@
             "output_type": "display_data",
             "data": {
               "text/plain": "<IPython.core.display.HTML object>",
-              "text/html": "<script>window.addEventListener(\"message\", event => console.log(\"Received data from main website:\", JSON.stringify(event.data, null, 2)), false);</script>"
+              "text/html": "<script>window.addEventListener(\"message\", event => console.log(\"Received data from main website:\", JSON.stringify(event.data)), false);</script>"
    },
             "metadata": {}
           }
