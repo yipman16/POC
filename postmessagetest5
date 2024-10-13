@@ -10,7 +10,7 @@
             "output_type": "display_data",
             "data": {
               "text/plain": "<IPython.core.display.HTML object>",
-              "text/html": "<script>window.addEventListener('load', function(){ window.parent.postMessage({ type: 'ContentHeight', contentHeight: 200 }, '*'); });</script>"
+              "text/html": "<script>window.addEventListener('load', function(){ window.frameElement.style.height = '200px'; });</script>"
    },
             "metadata": {}
           }
